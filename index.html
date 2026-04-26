@@ -3,88 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <title>Portofolio | Beranda</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eeeeee;
-            margin: 0;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        header {
-            background-color: #1abc9c;
+        body{
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8fbff;
+            color: #1e293b;
+        }
+
+        /* HEADER */
+        header{
+            background: #0f172a;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        nav {
-            background-color: #16a085;
-            padding: 10px;
-            text-align: center;
+        /* pattern transparan */
+        header::before{
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(59,130,246,0.15);
+            border-radius: 50%;
+            top: -80px;
+            left: -80px;
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
+        header::after{
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            bottom: -80px;
+            right: -50px;
+        }
+
+        header h1{
+            position: relative;
+            font-size: 38px;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+
+        header p{
+            position: relative;
+            margin-top: 10px;
+            font-size: 18px;
+            z-index: 2;
+            color: #dbeafe;
+        }
+
+        /* NAVBAR */
+        nav{
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        nav a{
             text-decoration: none;
+            color: #1e3a8a;
             font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: 0.3s;
         }
 
-        .container {
+        nav a:hover{
+            background: #2563eb;
+            color: white;
+        }
+
+        /* CONTAINER */
+        .container{
             width: 90%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
-        /* GRID UTAMA */
-        .content-grid {
+        /* GRID */
+        .content-grid{
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 20px;
+            gap: 30px;
         }
 
-        /* TEKS KIRI */
-        .content-text h2 {
-            color: #16a085;
+        /* TEXT */
+        .content-text h2{
+            color: #1e3a8a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 22px;
         }
 
-        .content-text p {
+        .content-text p{
+            line-height: 1.8;
             text-align: justify;
+            color: #475569;
         }
 
-        /* GRID GAMBAR KANAN */
-    .content-gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 300px;
-        gap: 0;
-        border-radius: 12px;
-        overflow: hidden;
-    }
+        /* GALLERY */
+        .content-gallery{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 220px 220px;
+            gap: 12px;
+        }
 
-    .content-gallery img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
+        .content-gallery img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        footer {
-            background-color: #1abc9c;
+        .content-gallery img:hover{
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer{
+            background: #0f172a;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+            padding: 25px;
+            margin-top: 40px;
+            font-size: 14px;
         }
 
-        /* RESPONSIVE (HP) */
-        @media (max-width: 768px) {
-            .content-grid {
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            .content-grid{
                 grid-template-columns: 1fr;
             }
+
+            nav{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1{
+                font-size: 26px;
+            }
         }
+
     </style>
 </head>
 
@@ -92,7 +174,7 @@
 
 <header>
     <h1>PORTOFOLIO FATH HAFIF TETAPUTRA</h1>
-    <p>Karya Nyata dari Proses Belajar  </p>
+    <p>Karya Nyata dari Proses Belajar</p>
 </header>
 
 <nav>
@@ -103,71 +185,40 @@
 </nav>
 
 <div class="container">
-
     <div class="content-grid">
 
-        <!-- BAGIAN KIRI: TEKS (WAJIB DIISI SENDIRI) -->
         <div class="content-text">
-
             <h2>Selamat Datang di Portofolio Saya</h2>
-            <p>
-                Website ini merupakan media pendukung untuk menampilkan hasil
-                Ujian Praktik Terintegrasi. Konten utama pada website ini adalah
-                video broadcasting pembelajaran yang berisi penyampaian teks
-                argumentasi secara lisan.
-            </p>
+            <p>Website ini merupakan media pendukung untuk menampilkan hasil Ujian Praktik Terintegrasi.</p>
 
             <h2>Tentang Portofolio Ini</h2>
-            <p>
-                Website ini merupakan website portofolio digital yang berisi
-                hasil karya dan pembelajaran saya selama mengikuti Ujian Praktik
-                Terintegrasi.
-            </p>
+            <p>Website ini berisi hasil karya dan pembelajaran saya.</p>
 
-            <h2>Tujuan Pembuatan Website Portofolio</h2>
-            <p>
-                Tujuan pembuatan website ini adalah untuk menampilkan karya
-                yang telah saya buat serta melatih kemampuan saya dalam
-                membuat website sederhana menggunakan HTML.
-            </p>
+            <h2>Tujuan Website</h2>
+            <p>Menampilkan karya serta melatih kemampuan membuat website HTML.</p>
 
-            <h2>Topik Argumentasi dan Alasan Pemilihan</h2>
-            <p>
-                <i>
-                Saya memilih topik argumentasi tentang manfaat Intership Curriculum di Dapoer Yaspia karena topik ini berkaitan langsung dengan pengalaman yang saya alami saat mengikuti program tersebut
-                </i>
-            </p>
+            <h2>Topik Argumentasi</h2>
+            <p>Saya memilih topik Internship Curriculum di Dapoer Yaspia.</p>
 
-            <h2>Harapan dari Video</h2>
-            <p>
-                <i>
-                Saya harap penonton dari video yang telah saya buat akan lebih tertarik dengan Intership Curriculum
-                </i>
-            </p>
+            <h2>Harapan</h2>
+            <p>Semoga penonton lebih tertarik dengan program internship.</p>
 
-            <h2>Refleksi, Kesan, dan Pesan</h2>
-            <p>
-                <i>
-                Selama ujian praktik ini dan belajar di kelas IX, saya belajar bahwa pengalaman langsung seperti Internship Curriculum memberi banyak pelajaran yang tidak selalu didapat di kelas, seperti tanggung jawab, kerja sama, dan komunikasi. Saya merasa senang bisa belajar di SMPIT Al Haraki karena mendapatkan banyak pengalaman baru. Pesan saya, semoga sekolah terus mempertahankan program yang bermanfaat ini dan semakin berkembang ke depannya.
-                </i>
-            </p>
-
+            <h2>Refleksi</h2>
+            <p>Program ini mengajarkan tanggung jawab dan komunikasi.</p>
         </div>
 
-        <!-- BAGIAN KANAN: GRID GAMBAR (BEBAS KREATIF) -->
         <div class="content-gallery">
-            <img src="dapoer.jpg" alt="Gambar Bebas 1">
-            <img src="kopi.jpg" alt="Gambar Bebas 2">
-            <img src="bar.jpg" alt="Gambar Bebas 3">
-            <img src="pastry.jpg" alt="Gambar Bebas 4">
+            <img src="dapoer.jpg">
+            <img src="kopi.jpg">
+            <img src="bar.jpg">
+            <img src="pastry.jpg">
         </div>
 
     </div>
-
 </div>
 
 <footer>
-    <p>Ujian Praktik Terintegrasi | SMPIT Al Haraki | Fath Hafif Tetaputra@2026 </p>
+    <p>Ujian Praktik Terintegrasi | SMPIT Al Haraki | Fath Hafif Tetaputra © 2026</p>
 </footer>
 
 </body>
